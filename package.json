@@ -10,7 +10,7 @@
     "prepare": "husky",
     "db:municipalities": "npm run db:municipalities:download && npm run db:municipalities:import",
     "db:municipalities:download": "download --extract --out tmp/ https://nedlasting.geonorge.no/geonorge/Basisdata/Kommuner/POSTGIS/Basisdata_0000_Norge_25833_Kommuner_POSTGIS.zip",
-    "db:municipalities:import": "docker exec -i /postgis /usr/bin/psql --user postgres < tmp/Basisdata_0000_Norge_25833_Kommuner_PostGIS.sql",
+    "db:municipalities:import": "docker exec -i /postgis07 /usr/bin/psql --user postgres < tmp/Basisdata_0000_Norge_25833_Kommuner_PostGIS.sql",
     "db:municipalities:heroku": "npm run db:municipalities:download && psql $DATABASE_URL < tmp/Basisdata_0000_Norge_25833_Kommuner_PostGIS.sql",
     "postinstall": "cd server && npm install --include=dev",
     "start": "cd server && npm start"
