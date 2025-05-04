@@ -8,17 +8,20 @@ import "ol/ol.css";
 import VectorLayer from "ol/layer/Vector";
 import VectorSource from "ol/source/Vector";
 import { GeoJSON } from "ol/format";
+import VectorTileLayer from "ol/layer/VectorTile";
+import VectorTileSource from "ol/source/VectorTile";
+import { MVT } from "ol/format";
 
 useGeographic();
 
 const map = new Map({
-  view: new View({ center: [10.8, 59.9], zoom: 13 }),
+  view: new View({ center: [11.05, 59.95], zoom: 14 }),
   layers: [
     new TileLayer({ source: new OSM() }),
-    new VectorLayer({
-      source: new VectorSource({
-        url: "/api/kommuner",
-        format: new GeoJSON(),
+    new VectorTileLayer({
+      source: new VectorTileSource({
+        url: "/api/kommuner/{z}/{x}/{y}",
+        format: new MVT(),
       }),
     }),
   ],
