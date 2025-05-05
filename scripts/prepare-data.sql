@@ -9,7 +9,7 @@ select kommunenavn,
        st_transform(omrade, 4326)                   omrade_4326
 from kommuner_4d2a1f720b994f11baaeae13ee600c8e.kommune;
 
-drop table if exists vegadresse;
+/*drop table if exists vegadresse;
 create table vegadresse
 as
 select adresseid,
@@ -24,3 +24,4 @@ from matrikkelenvegadresse_0a713408e3cc44fabf29ead685cac369.vegadresse;
 
 create index vegadresse_representasjonspunkt_3857_idx
 on vegadresse using GIST (representasjonspunkt_3857);
+*/

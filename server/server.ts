@@ -11,7 +11,7 @@ const postgresql = connectionString
 
 const app = new Hono();
 
-app.get("/api/adresser/:z/:x/:y", async (c) => {
+/*app.get("/api/adresser/:z/:x/:y", async (c) => {
   const { x, y, z } = c.req.param();
   const zoom = parseInt(z);
   if (zoom < 16) {
@@ -43,7 +43,7 @@ app.get("/api/adresser/:z/:x/:y", async (c) => {
     });
   }
 });
-
+*/
 app.get("/api/kommuner/:z/:x/:y", async (c) => {
   const { x, y, z } = c.req.param();
   const sql =
