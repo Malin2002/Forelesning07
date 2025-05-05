@@ -21,3 +21,6 @@ as
            st_transform(representasjonspunkt, 4326) representasjonspunkt_4326,
            st_transform(representasjonspunkt, 3857) representasjonspunkt_3857
 from matrikkelenvegadresse_0a713408e3cc44fabf29ead685cac369.vegadresse;
+
+create index vegadresse_representasjonspunkt_3857_idx
+on vegadresse using GIST (representasjonspunkt_3857);

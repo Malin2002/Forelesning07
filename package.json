@@ -18,7 +18,7 @@
     "db:addresses:import": "docker exec -i /postgis07 /usr/bin/psql --user postgres < tmp/Basisdata_0000_Norge_25833_MatrikkelenVegadresse_PostGIS.sql",
     "db:addresses:heroku": "npm run db:addresses:download && psql $DATABASE_URL < tmp/Basisdata_0000_Norge_25833_MatrikkelenVegadresse_PostGIS.sql",
     "db:local:prepare": "docker exec -i /postgis07 /usr/bin/psql --user postgres < scripts/prepare-data.sql",
-    "db:local": "npm run db:municipalities && npm run db:local:prepare",
+    "db:local": "npm run db:municipalities && npm run db:addresses && npm run db:local:prepare",
     "postinstall": "cd server && npm install --include=dev",
     "db:heroku:postgis": "echo 'create extension postgis' | psql $DATABASE_URL",
     "db:heroku:prepare": "psql $DATABASE_URL < scripts/prepare-data.sql",
