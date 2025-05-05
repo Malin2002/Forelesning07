@@ -12,14 +12,14 @@ from kommuner_4d2a1f720b994f11baaeae13ee600c8e.kommune;
 drop table if exists vegadresse;
 create table vegadresse
 as
-    select adresseid,
-           adressetekst,
-           adressenavn,
-           bokstav,
-           nummer,
-           representasjonspunkt,
-           st_transform(representasjonspunkt, 4326) representasjonspunkt_4326,
-           st_transform(representasjonspunkt, 3857) representasjonspunkt_3857
+select adresseid,
+        adressetekst,
+        adressenavn,
+        bokstav,
+        nummer,
+        representasjonspunkt,
+        st_transform(representasjonspunkt, 4326) representasjonspunkt_4326,
+        st_transform(representasjonspunkt, 3857) representasjonspunkt_3857
 from matrikkelenvegadresse_0a713408e3cc44fabf29ead685cac369.vegadresse;
 
 create index vegadresse_representasjonspunkt_3857_idx
