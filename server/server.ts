@@ -65,7 +65,7 @@ app.get("/api/kommuner/:z/:x/:y", async (c) => {
         (select kommunenummer,
                 kommunenavn,
                 st_asmvtgeom(
-                    omrade_3857, st_tileenvelope($1, $2, $3)
+                    omrade_3857_simple, st_tileenvelope($1, $2, $3)
                 ) as geometry
           from kommune
           where omrade_3857 && st_tileenvelope($1, $2, $3))
