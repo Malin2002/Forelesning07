@@ -15,13 +15,18 @@ import { MVT } from "ol/format";
 useGeographic();
 
 const map = new Map({
-  view: new View({ center: [11.05, 59.95], zoom: 14 }),
+  view: new View({ center: [10.79, 59.895], zoom: 16 }),
   layers: [
     new TileLayer({ source: new OSM() }),
     new VectorTileLayer({
       source: new VectorTileSource({
         url: "/api/kommuner/{z}/{x}/{y}",
         format: new MVT(),
+      }),
+    }),
+    new VectorTileLayer({
+      source: new VectorTileSource({
+        url: "/api/adresser/{z}/{x}/{y}",
       }),
     }),
   ],
