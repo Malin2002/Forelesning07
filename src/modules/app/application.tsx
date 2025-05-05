@@ -20,13 +20,13 @@ const map = new Map({
     new TileLayer({ source: new OSM() }),
     new VectorTileLayer({
       source: new VectorTileSource({
-        url: "/api/adresser/{z}/{x}/{y}",
+        url: "/api/kommuner/{z}/{x}/{y}",
         format: new MVT(),
       }),
     }),
     new VectorTileLayer({
       source: new VectorTileSource({
-        url: "/api/kommuner/{z}/{x}/{y}",
+        url: "/api/adresser/{z}/{x}/{y}",
         format: new MVT(),
       }),
     }),
